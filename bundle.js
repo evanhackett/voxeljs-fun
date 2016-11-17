@@ -5345,7 +5345,7 @@ function config (name) {
 const createGame = require('voxel-engine');
 
 const game = createGame({
-  texturePath: require('painterly-textures')
+  texturePath: './textures/'
 });
 const container = document.body;
 game.appendTo(container);
@@ -5355,7 +5355,7 @@ const dude = createPlayer('dude.png');
 dude.possess();
 dude.yaw.position.set(0, 100, 0);
 
-},{"painterly-textures":46,"voxel-engine":57,"voxel-player":62}],29:[function(require,module,exports){
+},{"voxel-engine":56,"voxel-player":61}],29:[function(require,module,exports){
 module.exports = AABB
 
 var vec3 = require('gl-matrix').vec3
@@ -6107,7 +6107,7 @@ function dragstream(el) {
   }
 }
 
-},{"domnode-dom":32,"stream":25,"through":53}],37:[function(require,module,exports){
+},{"domnode-dom":32,"stream":25,"through":52}],37:[function(require,module,exports){
 var EventEmitter = require('events').EventEmitter;
 
 module.exports = function (elem) {
@@ -9609,7 +9609,7 @@ function usedrag(el) {
   return ee
 }
 
-},{"drag-stream":36,"events":6,"fullscreen":40,"pointer-lock":48,"stream":25}],44:[function(require,module,exports){
+},{"drag-stream":36,"events":6,"fullscreen":40,"pointer-lock":47,"stream":25}],44:[function(require,module,exports){
 var ever = require('ever')
   , vkey = require('vkey')
   , max = Math.max
@@ -9706,7 +9706,7 @@ module.exports = function(el, bindings, state) {
   }
 }
 
-},{"ever":37,"vkey":55}],45:[function(require,module,exports){
+},{"ever":37,"vkey":54}],45:[function(require,module,exports){
 var THREE
 
 module.exports = function(three, image, sizeRatio) {
@@ -10079,16 +10079,6 @@ Skin.prototype.createPlayerObject = function(scene) {
   return playerGroup
 }
 },{}],46:[function(require,module,exports){
-(function (__dirname){
-var path = require('path')
-var texturePath = __dirname + '/textures'
-
-module.exports = function(dir) {
-  return path.relative(dir, texturePath) + '/'
-}
-
-}).call(this,"/node_modules/painterly-textures")
-},{"path":11}],47:[function(require,module,exports){
 module.exports = pin
 
 var pins = {}
@@ -10170,7 +10160,7 @@ function pin(item, every, obj, name) {
   }
 }
 
-},{}],48:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 module.exports = pointer
 
 pointer.available = available
@@ -10334,7 +10324,7 @@ function shim(el) {
     null
 }
 
-},{"events":6,"stream":25}],49:[function(require,module,exports){
+},{"events":6,"stream":25}],48:[function(require,module,exports){
 module.exports = raf
 
 var EE = require('events').EventEmitter
@@ -10381,7 +10371,7 @@ function raf(el) {
 raf.polyfill = _raf
 raf.now = function() { return Date.now() }
 
-},{"events":6}],50:[function(require,module,exports){
+},{"events":6}],49:[function(require,module,exports){
 module.exports = SpatialEventEmitter
 
 var slice = [].slice
@@ -10513,7 +10503,7 @@ function finite(bbox) {
          isFinite(bbox.z1())
 }
 
-},{"./tree":51,"aabb-3d":29}],51:[function(require,module,exports){
+},{"./tree":50,"aabb-3d":29}],50:[function(require,module,exports){
 module.exports = Tree
 
 var aabb = require('aabb-3d')
@@ -10639,7 +10629,7 @@ proto.send = function(event, bbox, args) {
   }
 }
 
-},{"aabb-3d":29}],52:[function(require,module,exports){
+},{"aabb-3d":29}],51:[function(require,module,exports){
 (function (process){
 
 var window = window || {};
@@ -46673,7 +46663,7 @@ if (typeof exports !== 'undefined') {
 }
 
 }).call(this,require('_process'))
-},{"_process":13}],53:[function(require,module,exports){
+},{"_process":13}],52:[function(require,module,exports){
 (function (process){
 var Stream = require('stream')
 
@@ -46775,7 +46765,7 @@ function through (write, end) {
 
 
 }).call(this,require('_process'))
-},{"_process":13,"stream":25}],54:[function(require,module,exports){
+},{"_process":13,"stream":25}],53:[function(require,module,exports){
 /*
  * tic
  * https://github.com/shama/tic
@@ -46822,7 +46812,7 @@ Tic.prototype.tick = function(dt) {
   });
 };
 
-},{}],55:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 var ua = typeof window !== 'undefined' ? window.navigator.userAgent : ''
   , isOSX = /OS X/.test(ua)
   , isOpera = /Opera/.test(ua)
@@ -46960,7 +46950,7 @@ for(i = 112; i < 136; ++i) {
   output[i] = 'F'+(i-111)
 }
 
-},{}],56:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 module.exports = control
 
 var Stream = require('stream').Stream
@@ -47243,7 +47233,7 @@ function clamp(value, to) {
   return isFinite(to) ? max(min(value, to), -to) : value
 }
 
-},{"stream":25}],57:[function(require,module,exports){
+},{"stream":25}],56:[function(require,module,exports){
 (function (process){
 var voxel = require('voxel')
 var voxelMesh = require('voxel-mesh')
@@ -47986,7 +47976,7 @@ Game.prototype.destroy = function() {
 }
 
 }).call(this,require('_process'))
-},{"./lib/detector":58,"./lib/stats":59,"_process":13,"aabb-3d":29,"collide-3d-tilemap":31,"events":6,"gl-matrix":41,"inherits":42,"interact":43,"kb-controls":44,"path":11,"pin-it":47,"raf":49,"spatial-events":50,"three":52,"tic":54,"voxel":68,"voxel-control":56,"voxel-mesh":60,"voxel-physical":61,"voxel-raycast":63,"voxel-region-change":64,"voxel-texture":65,"voxel-view":66}],58:[function(require,module,exports){
+},{"./lib/detector":57,"./lib/stats":58,"_process":13,"aabb-3d":29,"collide-3d-tilemap":31,"events":6,"gl-matrix":41,"inherits":42,"interact":43,"kb-controls":44,"path":11,"pin-it":46,"raf":48,"spatial-events":49,"three":51,"tic":53,"voxel":67,"voxel-control":55,"voxel-mesh":59,"voxel-physical":60,"voxel-raycast":62,"voxel-region-change":63,"voxel-texture":64,"voxel-view":65}],57:[function(require,module,exports){
 /**
  * @author alteredq / http://alteredqualia.com/
  * @author mr.doob / http://mrdoob.com/
@@ -48047,7 +48037,7 @@ module.exports = function() {
   };
 }
 
-},{}],59:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 /**
  * @author mrdoob / http://mrdoob.com/
  */
@@ -48193,7 +48183,7 @@ var Stats = function () {
 };
 
 module.exports = Stats
-},{}],60:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 var THREE = require('three')
 
 module.exports = function(data, mesher, scaleFactor, three) {
@@ -48363,7 +48353,7 @@ Mesh.prototype.faceVertexUv = function(i) {
 }
 ;
 
-},{"three":52}],61:[function(require,module,exports){
+},{"three":51}],60:[function(require,module,exports){
 module.exports = physical
 
 var aabb = require('aabb-3d')
@@ -48582,7 +48572,7 @@ proto.atRestZ = function() {
   return this.resting.z
 }
 
-},{"aabb-3d":29,"three":52}],62:[function(require,module,exports){
+},{"aabb-3d":29,"three":51}],61:[function(require,module,exports){
 var skin = require('minecraft-skin');
 
 module.exports = function (game) {
@@ -48662,7 +48652,7 @@ function parseXYZ (x, y, z) {
     return { x: Number(x), y: Number(y), z: Number(z) };
 }
 
-},{"minecraft-skin":45}],63:[function(require,module,exports){
+},{"minecraft-skin":45}],62:[function(require,module,exports){
 "use strict"
 
 function traceRay_impl(
@@ -48884,7 +48874,7 @@ function traceRay(voxels, origin, direction, max_d, hit_pos, hit_norm, EPSILON) 
 }
 
 module.exports = traceRay
-},{}],64:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 module.exports = coordinates
 
 var aabb = require('aabb-3d')
@@ -48912,7 +48902,7 @@ function coordinates(spatial, box, regionWidth) {
  
   return emitter
 }
-},{"aabb-3d":29,"events":6}],65:[function(require,module,exports){
+},{"aabb-3d":29,"events":6}],64:[function(require,module,exports){
 var tic = require('tic')();
 var createAtlas = require('atlaspack');
 
@@ -49299,7 +49289,7 @@ function memoize(func) {
   return memoized;
 }
 
-},{"atlaspack":30,"tic":54}],66:[function(require,module,exports){
+},{"atlaspack":30,"tic":53}],65:[function(require,module,exports){
 (function (process){
 var THREE, temporaryPosition, temporaryVector
 
@@ -49389,7 +49379,7 @@ View.prototype.appendTo = function(element) {
   this.resizeWindow(this.width,this.height)
 }
 }).call(this,require('_process'))
-},{"_process":13}],67:[function(require,module,exports){
+},{"_process":13}],66:[function(require,module,exports){
 var events = require('events')
 var inherits = require('inherits')
 
@@ -49526,7 +49516,7 @@ Chunker.prototype.voxelVector = function(pos) {
   return [vx, vy, vz]
 };
 
-},{"events":6,"inherits":42}],68:[function(require,module,exports){
+},{"events":6,"inherits":42}],67:[function(require,module,exports){
 var chunker = require('./chunker')
 
 module.exports = function(opts) {
@@ -49622,7 +49612,7 @@ module.exports.generateExamples = function() {
 }
 
 
-},{"./chunker":67,"./meshers/culled":69,"./meshers/greedy":70,"./meshers/monotone":71,"./meshers/stupid":72}],69:[function(require,module,exports){
+},{"./chunker":66,"./meshers/culled":68,"./meshers/greedy":69,"./meshers/monotone":70,"./meshers/stupid":71}],68:[function(require,module,exports){
 //Naive meshing (with face culling)
 function CulledMesh(volume, dims) {
   //Precalculate direction vectors for convenience
@@ -49674,7 +49664,7 @@ if(exports) {
   exports.mesher = CulledMesh;
 }
 
-},{}],70:[function(require,module,exports){
+},{}],69:[function(require,module,exports){
 var GreedyMesh = (function() {
 //Cache buffer internally
 var mask = new Int32Array(4096);
@@ -49791,7 +49781,7 @@ if(exports) {
   exports.mesher = GreedyMesh;
 }
 
-},{}],71:[function(require,module,exports){
+},{}],70:[function(require,module,exports){
 "use strict";
 
 var MonotoneMesh = (function(){
@@ -50044,7 +50034,7 @@ if(exports) {
   exports.mesher = MonotoneMesh;
 }
 
-},{}],72:[function(require,module,exports){
+},{}],71:[function(require,module,exports){
 //The stupidest possible way to generate a Minecraft mesh (I think)
 function StupidMesh(volume, dims) {
   var vertices = [], faces = [], x = [0,0,0], n = 0;
