@@ -1,7 +1,7 @@
 const createGame = require('voxel-engine');
 
 const game = createGame({
-  texturePath: require('painterly-textures')
+  texturePath: './textures/'
 });
 const container = document.body;
 game.appendTo(container);
